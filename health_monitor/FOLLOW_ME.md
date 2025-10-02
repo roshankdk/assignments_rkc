@@ -2,6 +2,9 @@
 
 ## Environment Setup
 ```bash
+# Goto project folder health_monitor
+cd health_monitor
+
 # Create a virtual environment
 python -m venv venv
 
@@ -25,4 +28,5 @@ pip install -r requirements.txt
     ```bash
     python main_simulator.py
     ```
+
 4. Open your browser and navigate to [http://localhost:5000](http://localhost:5000)
