@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "author": "Health Monitor Project",
+  "editor": "wokwi",
+  "parts": [
+    { 
+      "type": "wokwi-arduino-uno", 
+      "id": "uno", 
+      "top": 0, 
+      "left": 0, 
+      "attrs": {} 
+    },
+    { 
+      "type": "wokwi-led", 
+      "id": "led1", 
+      "top": -50, 
+      "left": 200, 
+      "attrs": { "color": "red" } 
+    },
+    { 
+      "type": "wokwi-led", 
+      "id": "led2", 
+      "top": -50, 
+      "left": 250, 
+      "attrs": { "color": "green" } 
+    },
+    { 
+      "type": "wokwi-resistor", 
+      "id": "r1", 
+      "top": 10, 
+      "left": 200, 
+      "attrs": { "value": "220" } 
+    },
+    { 
+      "type": "wokwi-resistor", 
+      "id": "r2", 
+      "top": 10, 
+      "left": 250, 
+      "attrs": { "value": "220" } 
+    },
+    { 
+      "type": "wokwi-pushbutton", 
+      "id": "btn1", 
+      "top": 100, 
+      "left": 300, 
+      "attrs": {} 
+    },
+    { 
+      "type": "wokwi-potentiometer", 
+      "id": "pot1", 
+      "top": 150, 
+      "left": 50, 
+      "attrs": {} 
+    },
+    { 
+      "type": "wokwi-potentiometer", 
+      "id": "pot2", 
+      "top": 150, 
+      "left": 150, 
+      "attrs": {} 
+    },
+    { 
+      "type": "wokwi-lcd1602", 
+      "id": "lcd1", 
+      "top": -150, 
+      "left": 100, 
+      "attrs": { "pins": "i2c" } 
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label1",
+      "top": 130,
+      "left": 60,
+      "attrs": { "text": "Heart Rate" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label2",
+      "top": 130,
+      "left": 160,
+      "attrs": { "text": "SpO2" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.1", "led1:C", "black", [ "v0" ] ],
+    [ "uno:GND.1", "led2:C", "black", [ "v0" ] ],
+    [ "r1:1", "led1:A", "red", [ "v0" ] ],
+    [ "r2:1", "led2:A", "green", [ "v0" ] ],
+    [ "uno:7", "r1:2", "red", [ "v0" ] ],
+    [ "uno:8", "r2:2", "green", [ "v0" ] ],
+    [ "uno:2", "btn1:1.l", "blue", [ "v0" ] ],
+    [ "uno:GND.1", "btn1:2.l", "black", [ "v0" ] ],
+    [ "pot1:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "pot1:SIG", "uno:A0", "yellow", [ "v0" ] ],
+    [ "pot2:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "pot2:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "pot2:SIG", "uno:A1", "orange", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "v0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "v0" ] ],
+    [ "lcd1:SCL", "uno:A5", "blue", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
